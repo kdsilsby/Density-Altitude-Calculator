@@ -20,19 +20,30 @@ struct ContentView: View {
                 //Currently default altitude will be in feet. Add options later for meters
                 Text("Field Elevation: ")
                 TextField("Field Elevation in Feet", value: $elevation, format: .number)
+                    .padding(.leading)
+                Text("Feet")
+                    .padding(.trailing)
             }
             HStack {
                 //Currently default temperature will be celsius. Will add option for fahrenheit.
                 Text("Temperature: ")
                 TextField("Temperature in C", value: $temperature, format: .number)
+                    .padding(.leading)
+                Text("Celsius")
+                    .padding(.trailing)
             }
             HStack {
                 //Current default altimeter units are inHg. Will add option for hPa
                 Text("Altimeter: ")
                 TextField("Altimeter in inHG", value: $altimeter, format: .number)
+                    .padding(.leading)
+                Text("inHg")
+                    .padding(.trailing)
             }
             HStack {
                 Text("Dry Density Altitude: ")
+                //String(dryDensityAlt(tempC: $temperature, elevation_ft: $elevation, altimeter_inHg: $altimeter))
+                Text("Ft")
             }
             .padding()
         }

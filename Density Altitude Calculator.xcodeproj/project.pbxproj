@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2464F8922C768B060081EA4C /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2464F8912C768B060081EA4C /* Calculations.swift */; };
 		2471BE0A2C7667AB002E41DF /* Density_Altitude_CalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2471BE092C7667AB002E41DF /* Density_Altitude_CalculatorApp.swift */; };
 		2471BE0C2C7667AB002E41DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2471BE0B2C7667AB002E41DF /* ContentView.swift */; };
 		2471BE0E2C7667AC002E41DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2471BE0D2C7667AC002E41DF /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2464F8912C768B060081EA4C /* Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
 		2471BE062C7667AB002E41DF /* Density Altitude Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Density Altitude Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2471BE092C7667AB002E41DF /* Density_Altitude_CalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Density_Altitude_CalculatorApp.swift; sourceTree = "<group>"; };
 		2471BE0B2C7667AB002E41DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				2471BE0B2C7667AB002E41DF /* ContentView.swift */,
 				2471BE0D2C7667AC002E41DF /* Assets.xcassets */,
 				2471BE0F2C7667AC002E41DF /* Preview Content */,
+				2464F8912C768B060081EA4C /* Calculations.swift */,
 			);
 			path = "Density Altitude Calculator";
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			files = (
 				2471BE0C2C7667AB002E41DF /* ContentView.swift in Sources */,
 				2471BE0A2C7667AB002E41DF /* Density_Altitude_CalculatorApp.swift in Sources */,
+				2464F8922C768B060081EA4C /* Calculations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
