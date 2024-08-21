@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2471BE0A2C7667AB002E41DF /* Density_Altitude_CalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2471BE092C7667AB002E41DF /* Density_Altitude_CalculatorApp.swift */; };
+		2471BE0C2C7667AB002E41DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2471BE0B2C7667AB002E41DF /* ContentView.swift */; };
+		2471BE0E2C7667AC002E41DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2471BE0D2C7667AC002E41DF /* Assets.xcassets */; };
+		2471BE112C7667AC002E41DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2471BE102C7667AC002E41DF /* Preview Assets.xcassets */; };
+		2471BE1B2C7667AC002E41DF /* Density_Altitude_CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2471BE1A2C7667AC002E41DF /* Density_Altitude_CalculatorTests.swift */; };
+		2471BE252C7667AC002E41DF /* Density_Altitude_CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2471BE242C7667AC002E41DF /* Density_Altitude_CalculatorUITests.swift */; };
+		2471BE272C7667AC002E41DF /* Density_Altitude_CalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2471BE262C7667AC002E41DF /* Density_Altitude_CalculatorUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2471BE172C7667AC002E41DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2471BDFE2C7667AB002E41DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2471BE052C7667AB002E41DF;
+			remoteInfo = "Density Altitude Calculator";
+		};
+		2471BE212C7667AC002E41DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2471BDFE2C7667AB002E41DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2471BE052C7667AB002E41DF;
+			remoteInfo = "Density Altitude Calculator";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2471BE062C7667AB002E41DF /* Density Altitude Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Density Altitude Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2471BE092C7667AB002E41DF /* Density_Altitude_CalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Density_Altitude_CalculatorApp.swift; sourceTree = "<group>"; };
+		2471BE0B2C7667AB002E41DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2471BE0D2C7667AC002E41DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2471BE102C7667AC002E41DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2471BE162C7667AC002E41DF /* Density Altitude CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Density Altitude CalculatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2471BE1A2C7667AC002E41DF /* Density_Altitude_CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Density_Altitude_CalculatorTests.swift; sourceTree = "<group>"; };
+		2471BE202C7667AC002E41DF /* Density Altitude CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Density Altitude CalculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2471BE242C7667AC002E41DF /* Density_Altitude_CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Density_Altitude_CalculatorUITests.swift; sourceTree = "<group>"; };
+		2471BE262C7667AC002E41DF /* Density_Altitude_CalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Density_Altitude_CalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2471BE032C7667AB002E41DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2471BE132C7667AC002E41DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2471BE1D2C7667AC002E41DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2471BDFD2C7667AB002E41DF = {
+			isa = PBXGroup;
+			children = (
+				2471BE082C7667AB002E41DF /* Density Altitude Calculator */,
+				2471BE192C7667AC002E41DF /* Density Altitude CalculatorTests */,
+				2471BE232C7667AC002E41DF /* Density Altitude CalculatorUITests */,
+				2471BE072C7667AB002E41DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2471BE072C7667AB002E41DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2471BE062C7667AB002E41DF /* Density Altitude Calculator.app */,
+				2471BE162C7667AC002E41DF /* Density Altitude CalculatorTests.xctest */,
+				2471BE202C7667AC002E41DF /* Density Altitude CalculatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2471BE082C7667AB002E41DF /* Density Altitude Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				2471BE092C7667AB002E41DF /* Density_Altitude_CalculatorApp.swift */,
+				2471BE0B2C7667AB002E41DF /* ContentView.swift */,
+				2471BE0D2C7667AC002E41DF /* Assets.xcassets */,
+				2471BE0F2C7667AC002E41DF /* Preview Content */,
+			);
+			path = "Density Altitude Calculator";
+			sourceTree = "<group>";
+		};
+		2471BE0F2C7667AC002E41DF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2471BE102C7667AC002E41DF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2471BE192C7667AC002E41DF /* Density Altitude CalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				2471BE1A2C7667AC002E41DF /* Density_Altitude_CalculatorTests.swift */,
+			);
+			path = "Density Altitude CalculatorTests";
+			sourceTree = "<group>";
+		};
+		2471BE232C7667AC002E41DF /* Density Altitude CalculatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2471BE242C7667AC002E41DF /* Density_Altitude_CalculatorUITests.swift */,
+				2471BE262C7667AC002E41DF /* Density_Altitude_CalculatorUITestsLaunchTests.swift */,
+			);
+			path = "Density Altitude CalculatorUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2471BE052C7667AB002E41DF /* Density Altitude Calculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2471BE2A2C7667AC002E41DF /* Build configuration list for PBXNativeTarget "Density Altitude Calculator" */;
+			buildPhases = (
+				2471BE022C7667AB002E41DF /* Sources */,
+				2471BE032C7667AB002E41DF /* Frameworks */,
+				2471BE042C7667AB002E41DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Density Altitude Calculator";
+			productName = "Density Altitude Calculator";
+			productReference = 2471BE062C7667AB002E41DF /* Density Altitude Calculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2471BE152C7667AC002E41DF /* Density Altitude CalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2471BE2D2C7667AC002E41DF /* Build configuration list for PBXNativeTarget "Density Altitude CalculatorTests" */;
+			buildPhases = (
+				2471BE122C7667AC002E41DF /* Sources */,
+				2471BE132C7667AC002E41DF /* Frameworks */,
+				2471BE142C7667AC002E41DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2471BE182C7667AC002E41DF /* PBXTargetDependency */,
+			);
+			name = "Density Altitude CalculatorTests";
+			productName = "Density Altitude CalculatorTests";
+			productReference = 2471BE162C7667AC002E41DF /* Density Altitude CalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2471BE1F2C7667AC002E41DF /* Density Altitude CalculatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2471BE302C7667AC002E41DF /* Build configuration list for PBXNativeTarget "Density Altitude CalculatorUITests" */;
+			buildPhases = (
+				2471BE1C2C7667AC002E41DF /* Sources */,
+				2471BE1D2C7667AC002E41DF /* Frameworks */,
+				2471BE1E2C7667AC002E41DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2471BE222C7667AC002E41DF /* PBXTargetDependency */,
+			);
+			name = "Density Altitude CalculatorUITests";
+			productName = "Density Altitude CalculatorUITests";
+			productReference = 2471BE202C7667AC002E41DF /* Density Altitude CalculatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2471BDFE2C7667AB002E41DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					2471BE052C7667AB002E41DF = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					2471BE152C7667AC002E41DF = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 2471BE052C7667AB002E41DF;
+					};
+					2471BE1F2C7667AC002E41DF = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 2471BE052C7667AB002E41DF;
+					};
+				};
+			};
+			buildConfigurationList = 2471BE012C7667AB002E41DF /* Build configuration list for PBXProject "Density Altitude Calculator" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2471BDFD2C7667AB002E41DF;
+			productRefGroup = 2471BE072C7667AB002E41DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2471BE052C7667AB002E41DF /* Density Altitude Calculator */,
+				2471BE152C7667AC002E41DF /* Density Altitude CalculatorTests */,
+				2471BE1F2C7667AC002E41DF /* Density Altitude CalculatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2471BE042C7667AB002E41DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2471BE112C7667AC002E41DF /* Preview Assets.xcassets in Resources */,
+				2471BE0E2C7667AC002E41DF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2471BE142C7667AC002E41DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2471BE1E2C7667AC002E41DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2471BE022C7667AB002E41DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2471BE0C2C7667AB002E41DF /* ContentView.swift in Sources */,
+				2471BE0A2C7667AB002E41DF /* Density_Altitude_CalculatorApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2471BE122C7667AC002E41DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2471BE1B2C7667AC002E41DF /* Density_Altitude_CalculatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2471BE1C2C7667AC002E41DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2471BE252C7667AC002E41DF /* Density_Altitude_CalculatorUITests.swift in Sources */,
+				2471BE272C7667AC002E41DF /* Density_Altitude_CalculatorUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2471BE182C7667AC002E41DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2471BE052C7667AB002E41DF /* Density Altitude Calculator */;
+			targetProxy = 2471BE172C7667AC002E41DF /* PBXContainerItemProxy */;
+		};
+		2471BE222C7667AC002E41DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2471BE052C7667AB002E41DF /* Density Altitude Calculator */;
+			targetProxy = 2471BE212C7667AC002E41DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2471BE282C7667AC002E41DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2471BE292C7667AC002E41DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2471BE2B2C7667AC002E41DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Density Altitude Calculator/Preview Content\"";
+				DEVELOPMENT_TEAM = BM878AW7XH;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Density-Altitude-Calculator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2471BE2C2C7667AC002E41DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Density Altitude Calculator/Preview Content\"";
+				DEVELOPMENT_TEAM = BM878AW7XH;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Density-Altitude-Calculator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2471BE2E2C7667AC002E41DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BM878AW7XH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Density-Altitude-CalculatorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Density Altitude Calculator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Density Altitude Calculator";
+			};
+			name = Debug;
+		};
+		2471BE2F2C7667AC002E41DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BM878AW7XH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Density-Altitude-CalculatorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Density Altitude Calculator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Density Altitude Calculator";
+			};
+			name = Release;
+		};
+		2471BE312C7667AC002E41DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BM878AW7XH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Density-Altitude-CalculatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Density Altitude Calculator";
+			};
+			name = Debug;
+		};
+		2471BE322C7667AC002E41DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BM878AW7XH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Density-Altitude-CalculatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Density Altitude Calculator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2471BE012C7667AB002E41DF /* Build configuration list for PBXProject "Density Altitude Calculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2471BE282C7667AC002E41DF /* Debug */,
+				2471BE292C7667AC002E41DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2471BE2A2C7667AC002E41DF /* Build configuration list for PBXNativeTarget "Density Altitude Calculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2471BE2B2C7667AC002E41DF /* Debug */,
+				2471BE2C2C7667AC002E41DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2471BE2D2C7667AC002E41DF /* Build configuration list for PBXNativeTarget "Density Altitude CalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2471BE2E2C7667AC002E41DF /* Debug */,
+				2471BE2F2C7667AC002E41DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2471BE302C7667AC002E41DF /* Build configuration list for PBXNativeTarget "Density Altitude CalculatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2471BE312C7667AC002E41DF /* Debug */,
+				2471BE322C7667AC002E41DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2471BDFE2C7667AB002E41DF /* Project object */;
+}
