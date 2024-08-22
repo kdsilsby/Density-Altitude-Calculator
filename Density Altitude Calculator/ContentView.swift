@@ -10,9 +10,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var elevation = 0
-    @State private var temperature = 15
-    @State private var altimeter = 29.92
+    @State private var elevation: Double = 0
+    @State private var temperature: Double = 15
+    @State private var altimeter: Double = 29.92
     
     var body: some View {
         VStack {
@@ -42,7 +42,7 @@ struct ContentView: View {
             }
             HStack {
                 Text("Dry Density Altitude: ")
-                //String(dryDensityAlt(tempC: $temperature, elevation_ft: $elevation, altimeter_inHg: $altimeter))
+                Text(String(dryDensityAlt(tempC: temperature, elevation_ft: Int(elevation), altimeter_inHg: altimeter)))
                 Text("Ft")
             }
             .padding()

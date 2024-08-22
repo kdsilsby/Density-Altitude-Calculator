@@ -13,11 +13,18 @@ func pressureAltitude(elevation_ft: Int, altimeter_inHg: Double) -> Double {
     return ((1 - pow((altimeter_inHg * 33.8639) / 1013.25, 0.190284)) * 145366.45) + Double(elevation_ft)
 }
 
+extension Double {
+    func rounded(toPlaces: Int) -> Double {
+        let divisor = pow(10.0, Double(toPlaces))
+        return (self*divisor).rounded() / divisor
+    }
+}
 
 func ISADeviation (tempC: Double, elevation_ft: Int) -> Double {
     return tempC - (15 - ((Double(elevation_ft)/1000)*1.9812))
 }
 
 func dryDensityAlt(tempC: Double, elevation_ft: Int, altimeter_inHg: Double) -> Double {
-    return pressureAltitude(elevation_ft: elevation_ft, altimeter_inHg: altimeter_inHg) + 118.8 * ISADeviation(tempC: tempC, elevation_ft: elevation_ft)
+    return (pressureAltitude(elevation_ft: elevation_ft, altimeter_inHg: altimeter_inHg) + 118.8 * ISADeviation(tempC: tempC, elevation_ft: elevation_ft)).rounded(toPlaces: 0)
 }
+
