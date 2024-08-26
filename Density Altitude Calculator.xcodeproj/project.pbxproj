@@ -46,6 +46,7 @@
 		2471BE202C7667AC002E41DF /* Density Altitude CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Density Altitude CalculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2471BE242C7667AC002E41DF /* Density_Altitude_CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Density_Altitude_CalculatorUITests.swift; sourceTree = "<group>"; };
 		2471BE262C7667AC002E41DF /* Density_Altitude_CalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Density_Altitude_CalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		24E261F32C7CF03D00BBFCE1 /* Calculation Checks.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = "Calculation Checks.playground"; path = "../../../Calculation Checks.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +97,7 @@
 		2471BE082C7667AB002E41DF /* Density Altitude Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				24E261F32C7CF03D00BBFCE1 /* Calculation Checks.playground */,
 				2471BE092C7667AB002E41DF /* Density_Altitude_CalculatorApp.swift */,
 				2471BE0B2C7667AB002E41DF /* ContentView.swift */,
 				2471BE0D2C7667AC002E41DF /* Assets.xcassets */,
