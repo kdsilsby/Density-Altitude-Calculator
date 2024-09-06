@@ -34,13 +34,6 @@ func dryDensityAlt(tempC: Double, elevation_ft: Int, altimeter_inHg: Double) -> 
     return (pressureAltitude(elevation_ft: elevation_ft, altimeter_inHg: altimeter_inHg) + 118.8 * ISADeviation(tempC: tempC, elevation_ft: elevation_ft)).rounded(toPlaces: 0)
 }
 
-//Simple NOAA equation to determine density altitude but does not account for vapor pressure/dew point
-func dryDensityAlt_NOAA(tempC: Double, altimeter_inHg: Double, fieldElevation: Int) -> Double {
-    let stationPressure = actualStationPressure(fieldElevation: fieldElevation, altimeter_inHg: altimeter_inHg)
-    let tempR = (tempC * (9 / 5) + 32) + 459.69
-    return 145442.16*(1 - pow((17.326 * stationPressure) / tempR, 0.235))
-}
-
 /*
  Polynomial algorithm developed by Herman Wobus to determine vapor pressure Vp.
  
@@ -102,48 +95,94 @@ func vaporPressure_Tetens(dewPoint_C: Double) -> Double {
     return e_so * pow(10.0, exponent)
 }
 
-/*
- Actual station pressure, Pa. Determining station pressure from altimeter setting and field elevation.
- 
- Pa = [AS^(L*R/g*M_d) - (L/T_0)*(P_0^(L*R/g*M_d)*H)]^(g*M_d/L*R)
- 
- Can be simplified to:
- 
- Pa = (AS^k1 - k2*H)^(1/k1), since L, R, g, M_d, P_0 and T_0 are all constants anyway.
- 
- k1 = L*R/g*M_d ≈ 0.190263
- k2 = (L/T_0)*(P_0^(L*R/g*M_d) ≈ 8.417286e-5
- 
- AS is station altimeter setting given in ATIS/AWOS report in inHg.
- L is the standard laps rate.
- R is the universal gas constant.
- g is the average gravitational constant at the surface of the Earth.
- M_d is the molar weight of dry air.
- T_0 is standard temperature at sea level
- P_0 is the standard pressure at sea level
- H is the geopotential station elevation determined from station elevation/geometric elevation (Z) and converting that based on the potential gravitational ratio between what gravity should be compared to sea level.
- H = (E*Z)/(Z+E)
- E is the average Earth radius
- 
- Result values in millibar, mb.
- 
- Sources:
- https://wahiduddin.net/calc/density_altitude.htm
- */
-func actualStationPressure(fieldElevation: Int, altimeter_inHg: Double) -> Double {
-    let earthsRadius_E = 6356766.0 //Earth radius in meters, m
-    let standardISATemp_T0 = 288.15 //Standard temp at sea level in Kelvin
-    let standardISAPressure_P0 = 1013.25 //Standard pressure at sea level in millibars, mb
-    let universalGasConst_R = 8.314462618 // J/mol*K or (Kg*m^2)/(s^2*K*mol) since J is the same as kg*m^2/s^2
-    let tempLapseRate_L = 0.0065 // K/m
-    let earthGravityConst_g = 9.80665 // m/s^2
-    let m_d = 0.02896968 //molecular weight of dry air. Based on nitrogen/oxygen ratio in the atmosphere. kg/mol
-    let geometricFieldElevation_Z_m = Double(fieldElevation) / 3.28084 //Converting from feet to meters. 1 m = 3.28084 ft
-    let geopotentialStationElevation_H = (geometricFieldElevation_Z_m * earthsRadius_E) / (geometricFieldElevation_Z_m + earthsRadius_E) //Determining geopotential altitude from geometric altituden (same as field elevations). Needs to be in  meters
-    let altimeter_mb = altimeter_inHg * 33.8639 //Conversion to mb.
-    let k1 = (tempLapseRate_L * universalGasConst_R) / (earthGravityConst_g * m_d) // (L*R)/(g*Md)
-    let k2 = (tempLapseRate_L / standardISATemp_T0)*(pow(standardISAPressure_P0, k1)) //(L/T_0) * P_0^k1
-    let altimeterSettingResult = pow(altimeter_mb, k1)
+struct determineDensityAlt {
+    static let earthsRadius_E = 6356766.0 //Earth radius in meters, m
+    static let standardISATemp_T0 = 288.15 //Standard temp at sea level in Kelvin
+    static let standardISAPressure_P0 = 1013.25 //Standard pressure at sea level in millibars, mb
+    static let universalGasConst_R = 8.314462618 // J/mol*K or (Kg*m^2)/(s^2*K*mol) since J is the same as kg*m^2/s^2
+    static let tempLapseRate_L = 0.0065 // K/m
+    static let earthGravityConst_g = 9.80665 // m/s^2
+    static let m_d = 0.02896968 //molecular weight of dry air. Based on nitrogen/oxygen ratio in the atmosphere. kg/mol
+    static let m_v = 0.01801528 // molecular weight of water vapor. kg/mol
+    static let R_d = universalGasConst_R/m_d //
+    static let R_v = universalGasConst_R/m_v
     
-    return pow(altimeterSettingResult - (k2 * geopotentialStationElevation_H), 1/k1)
+    /*
+     Actual station pressure, Pa. Determining station pressure from altimeter setting and field elevation.
+     
+     Pa = [AS^(L*R/g*M_d) - (L/T_0)*(P_0^(L*R/g*M_d)*H)]^(g*M_d/L*R)
+     
+     Can be simplified to:
+     
+     Pa = (AS^k1 - k2*H)^(1/k1), since L, R, g, M_d, P_0 and T_0 are all constants anyway.
+     
+     k1 = L*R/g*M_d ≈ 0.190263
+     k2 = (L/T_0)*(P_0^(L*R/g*M_d) ≈ 8.417286e-5
+     
+     AS is station altimeter setting given in ATIS/AWOS report in inHg.
+     L is the standard laps rate.
+     R is the universal gas constant.
+     g is the average gravitational constant at the surface of the Earth.
+     M_d is the molar weight of dry air.
+     T_0 is standard temperature at sea level
+     P_0 is the standard pressure at sea level
+     H is the geopotential station elevation determined from station elevation/geometric elevation (Z) and converting that based on the potential gravitational ratio between what gravity should be compared to sea level.
+     H = (E*Z)/(Z+E)
+     E is the average Earth radius
+     
+     Result values in millibar, mb.
+     
+     Sources:
+     https://wahiduddin.net/calc/density_altitude.htm
+     */
+    func actualStationPressure(fieldElevation_ft: Int, altimeter_inHg: Double) -> Double {
+        let geometricFieldElevation_Z_m = Double(fieldElevation_ft) / 3.28084 //Converting from feet to meters. 1 m = 3.28084 ft
+        let geopotentialStationElevation_H = (geometricFieldElevation_Z_m * determineDensityAlt.earthsRadius_E) / (geometricFieldElevation_Z_m + determineDensityAlt.earthsRadius_E) //Determining geopotential altitude from geometric altitude (same as field elevations). Needs to be in  meters
+        let altimeter_mb = altimeter_inHg * 33.8639 //Conversion to mb.
+        let k1 = (determineDensityAlt.tempLapseRate_L * determineDensityAlt.universalGasConst_R) / (determineDensityAlt.earthGravityConst_g * determineDensityAlt.m_d) // (L*R)/(g*Md)
+        let k2 = (determineDensityAlt.tempLapseRate_L / determineDensityAlt.standardISATemp_T0)*(pow(determineDensityAlt.standardISAPressure_P0, k1)) //(L/T_0) * P_0^k1
+        let altimeterSettingResult = pow(altimeter_mb, k1)
+        
+        return pow(altimeterSettingResult - (k2 * geopotentialStationElevation_H), 1/k1)
+    }
+    
+    func airDensity_Wobus(stationTemp_C: Double, dewPoint_C: Double, altimeter_inHg: Double, fieldElevation_ft: Int) -> Double {
+        let stationPressure = determineDensityAlt().actualStationPressure(fieldElevation_ft: fieldElevation_ft, altimeter_inHg: altimeter_inHg) * 100
+        let vaporPressure = vaporPressure_Wobus(dewPoint_C: dewPoint_C) * 100
+        let dryAirPressure = stationPressure - vaporPressure
+        let tempK = stationTemp_C + 273.15
+        return (dryAirPressure/(determineDensityAlt.R_d * tempK)) + (vaporPressure/(determineDensityAlt.R_v * tempK))
+    }
+    
+    func vertualTemp_Tv_Wobus(tempC: Double, dewPoint: Double, fieldElevation: Int, altimeter_inHg: Double) -> Double {
+        let c1 = 1 - (determineDensityAlt.m_v / determineDensityAlt.m_d)
+        let tempK = tempC + 273.15 //station temperature converted to Kelvin
+        let vaporPressure = vaporPressure_Wobus(dewPoint_C: dewPoint)
+        let stationPressure = determineDensityAlt().actualStationPressure(fieldElevation_ft: fieldElevation, altimeter_inHg: altimeter_inHg)
+        return tempK / (1 - c1 * (vaporPressure / stationPressure)) - 273.15
+    }
+    
+    //Simple NOAA equation to determine density altitude but does not account for vapor pressure/dew point
+    func dryDensityAlt_NOAA(tempC: Double, altimeter_inHg: Double, fieldElevation: Int) -> Double {
+        let stationPressure = determineDensityAlt().actualStationPressure(fieldElevation_ft: fieldElevation, altimeter_inHg: altimeter_inHg) / 33.8639
+        let tempR = (tempC * (9 / 5) + 32) + 459.69
+        return 145442.16*(1 - pow((17.326 * stationPressure) / tempR, 0.235))
+    }
+    
+    //Used virtual temperature instead of station temperature to modify equation to use a factor that is adjusted for vapor pressure/dew point
+    func dryDensityAlt_NOAA_Tv_Wobus(tempC: Double, altimeter_inHg: Double, dewPoint_C: Double, elevation_ft: Int) -> Double {
+        let t_v = determineDensityAlt().vertualTemp_Tv_Wobus(tempC: tempC, dewPoint: dewPoint_C, fieldElevation: elevation_ft, altimeter_inHg: altimeter_inHg)
+        let stationPressure = determineDensityAlt().actualStationPressure(fieldElevation_ft: elevation_ft, altimeter_inHg: altimeter_inHg) / 33.8639
+        let tempR = (t_v * (9 / 5) + 32) + 459.69
+        return 145442.16*(1 - pow((17.326 * stationPressure) / tempR, 0.235))
+    }
+    
+    func geometricDensityAltitude_Wobus(tempC: Double, altimeter_inHg: Double, dewPoint_C: Double, elevation_ft: Int) -> Double {
+        let airDensity = determineDensityAlt().airDensity_Wobus(stationTemp_C: tempC, dewPoint_C: dewPoint_C, altimeter_inHg: altimeter_inHg, fieldElevation_ft: elevation_ft)
+        //H=(To/L)(1-(1000RToD/MdPo)^(LR/gMd-LR))
+        let exponent = (determineDensityAlt.tempLapseRate_L * determineDensityAlt.universalGasConst_R) / (determineDensityAlt.earthGravityConst_g * determineDensityAlt.m_d - determineDensityAlt.tempLapseRate_L * determineDensityAlt.universalGasConst_R)
+        let subponent = (determineDensityAlt.universalGasConst_R * determineDensityAlt.standardISATemp_T0 * airDensity) / (determineDensityAlt.m_d * determineDensityAlt.standardISAPressure_P0 * 100)
+        let geopotentialAlt_H = (determineDensityAlt.standardISATemp_T0 / determineDensityAlt.tempLapseRate_L) * (1 - pow(subponent, exponent))
+        return (determineDensityAlt.earthsRadius_E * geopotentialAlt_H) / (determineDensityAlt.earthsRadius_E - geopotentialAlt_H) * 3.28084
+     }
 }
